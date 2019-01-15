@@ -32,10 +32,10 @@ CREATE TABLE `applicationsetting` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`SettingKey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -71,14 +71,14 @@ CREATE TABLE `article` (
   `ImageThumbUrl` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `ImageUrl` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `IsPublish` tinyint(1) NOT NULL,
-  `PublishDate` datetime(6) DEFAULT NULL,
+  `PublishDate` datetime DEFAULT NULL,
   `Url` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_Article_ArticleCategory` (`ArticleTypeID`),
   CONSTRAINT `FK_Article_ArticleCategory` FOREIGN KEY (`ArticleTypeID`) REFERENCES `articletype` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -223,10 +223,10 @@ CREATE TABLE `articletype` (
   `SEODescription` varchar(300) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -287,10 +287,10 @@ CREATE TABLE `basket` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -319,10 +319,10 @@ CREATE TABLE `carousel` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -355,10 +355,10 @@ CREATE TABLE `carouselitem` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_CarouselItem_CarouselWidget` (`CarouselWidgetID`),
   CONSTRAINT `FK_CarouselItem_CarouselWidget` FOREIGN KEY (`CarouselWidgetID`) REFERENCES `carouselwidget` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -420,10 +420,10 @@ CREATE TABLE `cms_layout` (
   `Style` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `ImageUrl` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `ImageThumbUrl` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Theme` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -455,10 +455,10 @@ CREATE TABLE `cms_layouthtml` (
   `Html` longtext CHARACTER SET utf8mb4,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`LayoutHtmlId`),
   KEY `FK_CMS_LayoutHtml_CMS_Layout` (`LayoutId`),
   CONSTRAINT `FK_CMS_LayoutHtml_CMS_Layout` FOREIGN KEY (`LayoutId`) REFERENCES `cms_layout` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -491,10 +491,10 @@ CREATE TABLE `cms_media` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -526,10 +526,10 @@ CREATE TABLE `cms_message` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Description` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -567,17 +567,17 @@ CREATE TABLE `cms_page` (
   `Description` longtext CHARACTER SET utf8mb4,
   `Status` int(11) DEFAULT NULL,
   `IsPublish` tinyint(1) NOT NULL,
-  `PublishDate` datetime(6) DEFAULT NULL,
+  `PublishDate` datetime DEFAULT NULL,
   `MetaKeyWorlds` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `MetaDescription` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Script` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Style` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_CMS_Page_CMS_Layout` (`LayoutId`),
   CONSTRAINT `FK_CMS_Page_CMS_Layout` FOREIGN KEY (`LayoutId`) REFERENCES `cms_layout` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -611,10 +611,10 @@ CREATE TABLE `cms_redirection` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -645,10 +645,10 @@ CREATE TABLE `cms_rule` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `RuleItems` longtext CHARACTER SET utf8mb4,
   PRIMARY KEY (`RuleID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -682,10 +682,10 @@ CREATE TABLE `cms_theme` (
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -723,10 +723,10 @@ CREATE TABLE `cms_widgetbase` (
   `StyleClass` varchar(1000) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Description` longtext CHARACTER SET utf8mb4,
   `Status` int(11) DEFAULT NULL,
   `IsTemplate` tinyint(1) DEFAULT '0',
@@ -763,10 +763,10 @@ CREATE TABLE `cms_zone` (
   `Title` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Description` longtext CHARACTER SET utf8mb4,
   `Status` int(11) DEFAULT NULL,
   `HeadingCode` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -807,10 +807,10 @@ CREATE TABLE `comments` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -839,10 +839,10 @@ CREATE TABLE `dataarchived` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -878,10 +878,10 @@ CREATE TABLE `datadictionary` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -912,10 +912,10 @@ CREATE TABLE `extendfield` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Description` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -945,10 +945,10 @@ CREATE TABLE `formdata` (
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -978,10 +978,10 @@ CREATE TABLE `formdataitem` (
   `OptionValue` varchar(50) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1011,10 +1011,10 @@ CREATE TABLE `forms` (
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1129,10 +1129,10 @@ CREATE TABLE `navigation` (
   `DisplayOrder` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1192,8 +1192,8 @@ CREATE TABLE `order` (
   `PhoneNumber` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Total` decimal(18,4) NOT NULL,
   `OrderStatus` int(11) NOT NULL,
-  `PayTime` datetime(6) DEFAULT NULL,
-  `CompletePayTime` datetime(6) DEFAULT NULL,
+  `PayTime` datetime DEFAULT NULL,
+  `CompletePayTime` datetime DEFAULT NULL,
   `TrackingNumber` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LogisticsCompany` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `ShippingAddress` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -1204,13 +1204,13 @@ CREATE TABLE `order` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `RefundID` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Refund` decimal(18,4) DEFAULT NULL,
-  `RefundDate` datetime(6) DEFAULT NULL,
+  `RefundDate` datetime DEFAULT NULL,
   `RefundReason` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1246,10 +1246,10 @@ CREATE TABLE `orderitem` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1282,10 +1282,10 @@ CREATE TABLE `pageview` (
   `KeyWords` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1315,10 +1315,10 @@ CREATE TABLE `permission` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`PermissionKey`,`RoleId`),
   KEY `FK_Permission_Permission_Role` (`RoleId`),
   CONSTRAINT `FK_Permission_Permission_Role` FOREIGN KEY (`RoleId`) REFERENCES `roles` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1358,7 +1358,7 @@ CREATE TABLE `product` (
   `ProductContent` longtext CHARACTER SET utf8mb4,
   `Description` longtext CHARACTER SET utf8mb4,
   `IsPublish` tinyint(1) NOT NULL,
-  `PublishDate` datetime(6) DEFAULT NULL,
+  `PublishDate` datetime DEFAULT NULL,
   `Status` int(11) DEFAULT NULL,
   `SEOTitle` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `SEOKeyWord` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -1371,10 +1371,10 @@ CREATE TABLE `product` (
   `PartNumber` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_Product_ProductCategory` (`ProductCategoryID`),
   CONSTRAINT `FK_Product_ProductCategory` FOREIGN KEY (`ProductCategoryID`) REFERENCES `productcategory` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1410,10 +1410,10 @@ CREATE TABLE `productcategory` (
   `SEODescription` varchar(300) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1444,10 +1444,10 @@ CREATE TABLE `productcategorytag` (
   `ParentId` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1529,10 +1529,10 @@ CREATE TABLE `productimage` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1616,10 +1616,10 @@ CREATE TABLE `roles` (
   `Status` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1673,10 +1673,10 @@ CREATE TABLE `sectioncontent` (
   `Order` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_SectionContent_Widget` (`SectionWidgetId`),
   CONSTRAINT `FK_SectionContent_Widget` FOREIGN KEY (`SectionWidgetId`) REFERENCES `sectionwidget` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1845,10 +1845,10 @@ CREATE TABLE `sectiongroup` (
   `Order` int(11) DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `PercentWidth` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_SectionGroup_SectionGroup_Template` (`PartialView`),
@@ -1884,10 +1884,10 @@ CREATE TABLE `sectiontemplate` (
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`TemplateName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1992,7 +1992,7 @@ CREATE TABLE `users` (
   `UserID` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
   `PassWord` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `ApiLoginToken` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastLoginDate` datetime(6) DEFAULT NULL,
+  `LastLoginDate` datetime DEFAULT NULL,
   `LoginIP` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `PhotoUrl` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Timestamp` bigint(20) DEFAULT NULL,
@@ -2000,7 +2000,7 @@ CREATE TABLE `users` (
   `UserTypeCD` int(11) DEFAULT NULL,
   `Address` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Age` int(11) DEFAULT NULL,
-  `Birthday` datetime(6) DEFAULT NULL,
+  `Birthday` datetime DEFAULT NULL,
   `Birthplace` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `Email` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `EnglishName` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -2018,14 +2018,14 @@ CREATE TABLE `users` (
   `ZipCode` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `CreatebyName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CreateDate` datetime(6) DEFAULT NULL,
+  `CreateDate` datetime DEFAULT NULL,
   `LastUpdateBy` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `LastUpdateByName` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `LastUpdateDate` datetime(6) DEFAULT NULL,
+  `LastUpdateDate` datetime DEFAULT NULL,
   `Status` int(11) DEFAULT NULL,
   `Description` varchar(500) CHARACTER SET utf8mb4 DEFAULT NULL,
   `ResetToken` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `ResetTokenDate` datetime(6) DEFAULT NULL,
+  `ResetTokenDate` datetime DEFAULT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
